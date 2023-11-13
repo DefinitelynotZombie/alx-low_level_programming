@@ -1,22 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 /**
- * main - generates a random password and prints it
- * Return: 0 on success
+ * main - Generates a random password and prints it.
+ *
+ * Return: 0 on success.
  */
 int main(void)
 {
-	char c;
-	int x;
+	char randomChar;
+	int sum = 0;
 
 	srand(time(0));
-	while (x <= 2645)
+
+	while (sum < 2772)
 	{
-		c = rand() % 128;
-		x += c;
-		putchar(c);
+		randomChar = rand() % 128;
+		sum += randomChar;
+		putchar(randomChar);
 	}
-	putchar(2772 - x);
+	putchar(2772 - sum);
 	return (0);
 }
